@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menopause & Fiber | Dayli Wellness Co.</title>
+  <meta name="description" content="94% of menopausal women report digestive symptoms. Invisible prebiotic fiber supports your gut-hormone axis, estrogen metabolism, and digestive comfort — without bloating.">
+  <meta property="og:title" content="Menopause & Fiber | Dayli Wellness Co.">
+  <meta property="og:description" content="Feel like yourself again. Fiber-first nutrition for the body you're in now.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FAF7F2',
+            'cream-dark': '#F0EBE3',
+            charcoal: '#2D2926',
+            'charcoal-light': '#5C5552',
+            terracotta: '#C4796A',
+            'terracotta-dark': '#A8604F',
+            golden: '#D4A574',
+            sage: '#8BA888',
+            sand: '#E8DFD3',
+          },
+          fontFamily: {
+            serif: ['"DM Serif Display"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-children > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal-children.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+    .reveal-children.visible > *:nth-child(2) { transition-delay: 0.12s; opacity: 1; transform: translateY(0); }
+    .reveal-children.visible > *:nth-child(3) { transition-delay: 0.24s; opacity: 1; transform: translateY(0); }
+    .reveal-children.visible > *:nth-child(4) { transition-delay: 0.36s; opacity: 1; transform: translateY(0); }
+    .reveal-children.visible > *:nth-child(5) { transition-delay: 0.48s; opacity: 1; transform: translateY(0); }
+    .reveal-children.visible > *:nth-child(6) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+
+    .nav-scrolled {
+      background: rgba(250, 247, 242, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 3px rgba(45, 41, 38, 0.06);
+    }
+
+    input:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #C4796A;
+    }
+
+    .stat-number {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1;
+      font-weight: 600;
+      color: #C4796A;
+    }
+
+    .btn-primary {
+      transition: background-color 0.2s ease, transform 0.15s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+    }
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-cream text-charcoal font-sans antialiased">
+
+  <!-- ==================== NAV ==================== -->
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-charcoal tracking-[0.25em] text-sm font-semibold uppercase">
+          Dayli Wellness Co.
+        </a>
+        <a href="/" class="text-charcoal-light/60 text-sm hover:text-charcoal transition-colors hidden sm:inline">Home</a>
+      </div>
+      <a href="#waitlist"
+         class="btn-primary bg-charcoal text-cream px-5 py-2.5 text-sm font-medium rounded-full hover:bg-charcoal-light">
+        Join the Waitlist
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- ==================== HERO ==================== -->
+  <section class="min-h-[85vh] flex flex-col justify-center pt-24 pb-16 px-6">
+    <div class="max-w-6xl mx-auto w-full">
+      <div class="max-w-2xl">
+        <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-4 reveal">Menopause & Fiber</p>
+        <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl leading-[1.1] mb-6 reveal">
+          Feel Like<br>Yourself Again.
+        </h1>
+        <p class="text-charcoal-light text-lg sm:text-xl leading-relaxed max-w-xl mb-10 reveal">
+          Your digestion changed. Your weight shifted. Your energy disappeared.
+          Nobody warned you. But there's a nutrient that supports your gut-hormone
+          axis through every stage of this transition — and it's probably the one
+          you haven't tried yet.
+        </p>
+
+        <!-- Email Capture -->
+        <form id="hero-form" class="flex flex-col sm:flex-row gap-3 max-w-md reveal" onsubmit="handleSubmit(event, 'hero')">
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Your email"
+            class="flex-1 px-5 py-3 bg-white border border-sand rounded-full text-base placeholder:text-charcoal-light/50"
+          >
+          <button
+            type="submit"
+            class="btn-primary bg-terracotta text-white px-7 py-3 rounded-full text-base font-medium hover:bg-terracotta-dark whitespace-nowrap">
+            Get Early Access
+          </button>
+        </form>
+        <p id="hero-success" class="hidden text-terracotta font-medium mt-4">
+          You're on the list. We'll be in touch soon.
+        </p>
+        <p class="text-charcoal-light/50 text-sm mt-4 reveal">
+          Be first in line. No spam, ever.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== THE PROBLEM ==================== -->
+  <section class="py-24 md:py-32 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-2xl mb-16 reveal">
+        <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-4">What's Happening</p>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
+          The digestive chaos<br>nobody told you<br>was coming.
+        </h2>
+        <p class="text-charcoal-light text-lg leading-relaxed">
+          Bloating, constipation, stomach pain, weight that shifts to your
+          midsection seemingly overnight. These aren't random. They're connected
+          to the hormonal changes of perimenopause and menopause — and they're
+          far more common than most doctors acknowledge.
+        </p>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 reveal-children">
+        <div class="border-t-2 border-terracotta/20 pt-6">
+          <p class="stat-number font-sans mb-2">94%</p>
+          <p class="text-charcoal-light leading-relaxed">
+            of women ages 44-73 report digestive symptoms during menopause — bloating, constipation, stomach pain, and reflux.
+          </p>
+        </div>
+        <div class="border-t-2 border-terracotta/20 pt-6">
+          <p class="stat-number font-sans mb-2">38%</p>
+          <p class="text-charcoal-light leading-relaxed">
+            experience digestive symptoms for the first time with perimenopause. It's not in your head.
+          </p>
+        </div>
+        <div class="border-t-2 border-terracotta/20 pt-6">
+          <p class="stat-number font-sans mb-2">58%</p>
+          <p class="text-charcoal-light leading-relaxed">
+            of women who sought medical help for these symptoms found the care inadequate. You deserve better.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== ESTROBOLOME ==================== -->
+  <section class="py-24 md:py-32 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
+        <!-- Left: Explainer -->
+        <div class="reveal">
+          <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-4">The Gut-Hormone Axis</p>
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
+            Your gut is running<br>your hormones.<br>Here's how.
+          </h2>
+          <p class="text-charcoal-light text-lg leading-relaxed mb-4">
+            Inside your gut lives a collection of bacteria called the
+            <strong class="text-charcoal">estrobolome</strong> — they're
+            responsible for processing and regulating estrogen in your body.
+          </p>
+          <p class="text-charcoal-light text-lg leading-relaxed mb-4">
+            When estrogen declines during perimenopause, gut microbial
+            diversity decreases too — further impairing estrogen metabolism.
+            Women with constipation or gut imbalance may have excess estrogen
+            reabsorbed rather than eliminated.
+          </p>
+          <p class="text-charcoal-light text-lg leading-relaxed">
+            Prebiotic fiber feeds the beneficial bacteria in your estrobolome,
+            supporting healthier estrogen processing and helping break the
+            cycle of hormonal disruption.
+          </p>
+        </div>
+
+        <!-- Right: Pull Stat -->
+        <div class="reveal">
+          <div class="bg-white rounded-2xl p-8 md:p-10">
+            <div class="border-l-4 border-terracotta pl-6">
+              <p class="stat-number font-sans mb-4">3x</p>
+              <p class="text-charcoal text-lg font-medium leading-relaxed mb-4">
+                Women on high-fiber diets excreted three times more estrogen
+                and had 15-20% lower serum estrogen levels compared to women
+                on standard diets.
+              </p>
+              <p class="text-charcoal-light text-sm">
+                Published in peer-reviewed research on dietary fiber and estrogen metabolism.
+              </p>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-sand">
+              <p class="text-charcoal-light leading-relaxed text-sm">
+                <strong class="text-charcoal">The cycle:</strong> Hormonal changes damage the
+                gut. A damaged gut worsens hormonal imbalance. Fiber supports the
+                gut bacteria that help process hormones — interrupting the cycle
+                from the inside.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== BENEFITS ==================== -->
+  <section class="py-24 md:py-32 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-2xl mb-16 reveal">
+        <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-4">The Evidence</p>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
+          One nutrient. Multiple<br>symptoms addressed.
+        </h2>
+        <p class="text-charcoal-light text-lg leading-relaxed">
+          Fiber isn't a single-symptom fix. It supports the interconnected
+          systems that perimenopause and menopause disrupt — from digestion
+          to mood to body composition.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal-children">
+        <div class="bg-cream rounded-xl p-6">
+          <div class="w-10 h-10 rounded-full bg-terracotta/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-terracotta" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Digestive Relief</h3>
+          <p class="text-charcoal-light text-sm leading-relaxed">
+            Prebiotic fiber supports regularity and reduces the bloating,
+            constipation, and digestive discomfort that 94% of menopausal
+            women report.
+          </p>
+        </div>
+        <div class="bg-cream rounded-xl p-6">
+          <div class="w-10 h-10 rounded-full bg-golden/15 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-golden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Hormone Processing</h3>
+          <p class="text-charcoal-light text-sm leading-relaxed">
+            Fiber feeds the estrobolome — gut bacteria that metabolize
+            estrogen. Supporting this system helps your body process
+            hormones more effectively during the transition.
+          </p>
+        </div>
+        <div class="bg-cream rounded-xl p-6">
+          <div class="w-10 h-10 rounded-full bg-sage/15 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Belly Fat</h3>
+          <p class="text-charcoal-light text-sm leading-relaxed">
+            Research shows that for every 10g increase in daily soluble fiber,
+            belly fat is reduced by 3.7%. Fiber supports the metabolic health
+            that drives midsection changes.
+          </p>
+        </div>
+        <div class="bg-cream rounded-xl p-6">
+          <div class="w-10 h-10 rounded-full bg-terracotta/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-terracotta" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Hot Flash Reduction</h3>
+          <p class="text-charcoal-light text-sm leading-relaxed">
+            A UK study of 70,000 women found that high-fiber, plant-diverse
+            diets reduced hot flashes, mood swings, and depression by 30-44%.
+            Fiber's role in blood sugar stability may be the mechanism.
+          </p>
+        </div>
+        <div class="bg-cream rounded-xl p-6">
+          <div class="w-10 h-10 rounded-full bg-golden/15 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-golden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Blood Sugar</h3>
+          <p class="text-charcoal-light text-sm leading-relaxed">
+            Soluble fiber slows glucose absorption, supporting steadier energy
+            and reducing the spikes and crashes that become more pronounced
+            during hormonal transitions.
+          </p>
+        </div>
+        <div class="bg-cream rounded-xl p-6">
+          <div class="w-10 h-10 rounded-full bg-sage/15 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Mood & Sleep</h3>
+          <p class="text-charcoal-light text-sm leading-relaxed">
+            The gut-brain axis is real. A healthier microbiome — fed by
+            prebiotic fiber — supports the neurotransmitter production
+            that influences mood, anxiety, and sleep quality.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== FIBER TYPES ==================== -->
+  <section class="py-24 md:py-32 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-2xl mb-16 reveal">
+        <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-4">A Different Kind of Fiber</p>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
+          Invisible fiber.<br>Visible difference.
+        </h2>
+        <p class="text-charcoal-light text-lg leading-relaxed">
+          If the word "fiber" makes you think of chalky orange powder from the
+          pharmacy aisle, we understand. We use a completely different kind of
+          fiber — one that dissolves clear, has no taste, and won't add to
+          the digestive issues you're already managing.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
+        <!-- Left: Explainer -->
+        <div class="reveal">
+          <h3 class="font-serif text-2xl mb-4">Meet PHGG — the fiber you won't notice</h3>
+          <p class="text-charcoal-light leading-relaxed mb-4">
+            PHGG (partially hydrolyzed guar gum) is a soluble prebiotic fiber
+            that dissolves completely in water. No grit, no gel, no chalky
+            taste. It's the kind of fiber that works quietly in the background
+            — exactly what your changing body needs.
+          </p>
+          <p class="text-charcoal-light leading-relaxed mb-6">
+            Unlike psyllium or inulin, PHGG doesn't ferment aggressively
+            in the gut. That means no added gas, no bloating, no urgency.
+            Just gentle, consistent prebiotic support for the digestive
+            system that perimenopause disrupted.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-2 shrink-0"></span>
+              Dissolves completely clear — invisible in water, coffee, or a shake
+            </li>
+            <li class="flex items-start gap-3 text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-2 shrink-0"></span>
+              Zero taste, zero grit — nothing like what you're imagining
+            </li>
+            <li class="flex items-start gap-3 text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-2 shrink-0"></span>
+              Low-FODMAP certified — gentle enough for sensitive digestive systems
+            </li>
+            <li class="flex items-start gap-3 text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-2 shrink-0"></span>
+              Supports regularity without urgency — works with your body, not against it
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Comparison Cards -->
+        <div class="space-y-4 reveal">
+          <!-- PHGG -->
+          <div class="bg-white rounded-xl p-6 border-2 border-terracotta/30">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="font-semibold text-lg">PHGG (Sunfiber)</h4>
+              <span class="text-xs font-semibold text-white bg-terracotta px-3 py-1 rounded-full">What we use</span>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs bg-terracotta/10 text-terracotta px-2.5 py-1 rounded-full">Dissolves clear</span>
+              <span class="text-xs bg-terracotta/10 text-terracotta px-2.5 py-1 rounded-full">No bloating</span>
+              <span class="text-xs bg-terracotta/10 text-terracotta px-2.5 py-1 rounded-full">Low-FODMAP</span>
+              <span class="text-xs bg-terracotta/10 text-terracotta px-2.5 py-1 rounded-full">Gentle</span>
+            </div>
+            <p class="text-charcoal-light text-sm leading-relaxed">
+              Designed for bodies in transition. Gentle prebiotic support that feeds beneficial
+              gut bacteria without adding to the digestive chaos.
+            </p>
+          </div>
+
+          <!-- Psyllium -->
+          <div class="bg-white rounded-xl p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="font-semibold text-lg text-charcoal-light">Psyllium Husk</h4>
+              <span class="text-xs font-medium text-charcoal-light/60 px-3 py-1 rounded-full bg-sand">Common alternative</span>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">Gritty texture</span>
+              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">Gas & bloating</span>
+              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">Chalky taste</span>
+            </div>
+            <p class="text-charcoal-light text-sm leading-relaxed">
+              The pharmacy-aisle default. Effective for regularity, but the texture, taste,
+              and bloating make it hard to stick with — especially when digestive comfort is already compromised.
+            </p>
+          </div>
+
+          <!-- Inulin -->
+          <div class="bg-white rounded-xl p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="font-semibold text-lg text-charcoal-light">Inulin / Chicory Root</h4>
+              <span class="text-xs font-medium text-charcoal-light/60 px-3 py-1 rounded-full bg-sand">Common alternative</span>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">Significant gas</span>
+              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">Rapid fermentation</span>
+              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">High-FODMAP</span>
+            </div>
+            <p class="text-charcoal-light text-sm leading-relaxed">
+              Found in many "prebiotic" supplements, but ferments aggressively — adding gas
+              and distension to an already disrupted digestive system.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== PRODUCTS ==================== -->
+  <section class="py-24 md:py-32 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-2xl mb-16 reveal">
+        <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-4">Designed for This Chapter</p>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
+          Fiber-first products for<br>the body you're in now.
+        </h2>
+        <p class="text-charcoal-light text-lg leading-relaxed">
+          We don't sell standalone fiber you force down. We build invisible
+          prebiotic fiber into protein and electrolytes — supporting muscle
+          maintenance, hydration, gut health, and estrogen metabolism in
+          products you actually want.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+
+        <!-- Product 1: NO WHEY! -->
+        <div class="bg-cream rounded-2xl p-8 md:p-10 reveal">
+          <div class="flex justify-center mb-8">
+            <img
+              src="images/product-tub.png"
+              alt="NO WHEY! (+Fiber) — Beef protein + collagen + fiber tub"
+              class="h-56 md:h-64 object-contain"
+              loading="lazy"
+            >
+          </div>
+          <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-2">Dairy-Free Protein</p>
+          <h3 class="font-serif text-2xl md:text-3xl mb-4">NO WHEY! (+Fiber)</h3>
+          <p class="text-charcoal-light leading-relaxed mb-6">
+            25g of dairy-free protein from grass-fed beef and collagen, plus 5g
+            of invisible prebiotic fiber. Supports muscle maintenance, gut health,
+            and estrogen metabolism — designed for the body you're in now.
+          </p>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-3 text-sm text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-1.5 shrink-0"></span>
+              25g protein (grass-fed beef isolate + collagen peptides)
+            </li>
+            <li class="flex items-start gap-3 text-sm text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-1.5 shrink-0"></span>
+              5g prebiotic fiber (Sunfiber — tasteless, low-FODMAP)
+            </li>
+            <li class="flex items-start gap-3 text-sm text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-1.5 shrink-0"></span>
+              Collagen peptides support skin, joints, and bone health
+            </li>
+            <li class="flex items-start gap-3 text-sm text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-1.5 shrink-0"></span>
+              Dairy-free — no bloating from lactose sensitivity
+            </li>
+          </ul>
+        </div>
+
+        <!-- Product 2: Electrolytes + Fiber -->
+        <div class="bg-cream rounded-2xl p-8 md:p-10 reveal">
+          <div class="flex justify-center items-center mb-8 h-56 md:h-64">
+            <div class="text-center">
+              <div class="w-32 h-40 mx-auto rounded-xl bg-gradient-to-b from-sage/20 to-sage/5 flex items-center justify-center mb-4">
+                <svg class="w-12 h-12 text-sage/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+                </svg>
+              </div>
+              <p class="text-charcoal-light/40 text-sm italic">Render coming soon</p>
+            </div>
+          </div>
+          <p class="text-sage font-semibold text-sm tracking-wide uppercase mb-2">Daily Hydration</p>
+          <h3 class="font-serif text-2xl md:text-3xl mb-4">Electrolytes + Fiber</h3>
+          <p class="text-charcoal-light leading-relaxed mb-6">
+            Hydration + 5g of invisible prebiotic fiber. Supports digestion,
+            hormone processing, and the daily energy your changing body needs.
+            Completely invisible in water.
+          </p>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-3 text-sm text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-sage mt-1.5 shrink-0"></span>
+              450mg sodium, 250mg potassium, 80mg magnesium
+            </li>
+            <li class="flex items-start gap-3 text-sm text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-sage mt-1.5 shrink-0"></span>
+              5g prebiotic fiber — dissolves completely clear
+            </li>
+            <li class="flex items-start gap-3 text-sm text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-sage mt-1.5 shrink-0"></span>
+              Magnesium supports sleep, mood, and muscle relaxation
+            </li>
+            <li class="flex items-start gap-3 text-sm text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-sage mt-1.5 shrink-0"></span>
+              Convenient stick packs — simple daily routine
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== VALIDATION ==================== -->
+  <section class="py-24 md:py-32 px-6">
+    <div class="max-w-3xl mx-auto text-center reveal">
+      <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-8">We See You</p>
+
+      <div class="font-serif text-2xl sm:text-3xl md:text-[2rem] leading-relaxed text-charcoal/90 space-y-6">
+        <p>
+          "I don't recognize my body." We understand.
+        </p>
+        <p>
+          Your digestion shifted. Your weight redistributed. Your energy
+          vanished. And when you asked for help, you were told it was
+          stress, or aging, or "just how it is."
+        </p>
+        <p>
+          It's not just how it is. Your body is going through a real
+          transition — and it deserves real support. Not dismissal.
+          Not guesswork. Nourishment designed for exactly where you are.
+        </p>
+      </div>
+
+      <div class="mt-12 pt-10 border-t border-sand">
+        <p class="font-serif text-xl text-terracotta">
+          This is health, in full color. This is the Dayli way.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== WAITLIST CTA ==================== -->
+  <section id="waitlist" class="py-24 md:py-32 px-6 bg-white">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
+        Your body is changing.<br>Your nutrition should too.
+      </h2>
+      <p class="text-charcoal-light text-lg leading-relaxed mb-10 max-w-lg mx-auto">
+        We're launching soon. Join the waitlist for early access to fiber-first
+        products designed for this chapter of your life.
+      </p>
+
+      <form id="footer-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="handleSubmit(event, 'footer')">
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Your email"
+          class="flex-1 px-5 py-3.5 bg-white border border-sand rounded-full text-base placeholder:text-charcoal-light/50"
+        >
+        <button
+          type="submit"
+          class="btn-primary bg-terracotta text-white px-7 py-3.5 rounded-full text-base font-medium hover:bg-terracotta-dark whitespace-nowrap">
+          Join the Waitlist
+        </button>
+      </form>
+      <p id="footer-success" class="hidden text-terracotta font-medium mt-4">
+        You're on the list. We'll be in touch soon.
+      </p>
+      <p class="text-charcoal-light/50 text-sm mt-4">
+        No spam. Just the good stuff, when it's ready.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-12 px-6 border-t border-sand">
+    <div class="max-w-6xl mx-auto flex flex-col items-center gap-4">
+      <div class="flex flex-col sm:flex-row items-center justify-between w-full gap-4">
+        <a href="/" class="text-charcoal tracking-[0.25em] text-sm font-semibold uppercase">
+          Dayli Wellness Co.
+        </a>
+        <p class="text-charcoal-light/50 text-sm">
+          &copy; 2026 Dayli Wellness Co. All rights reserved.
+        </p>
+      </div>
+      <div class="flex gap-6 text-sm text-charcoal-light/60">
+        <a href="/pcos" class="hover:text-charcoal transition-colors">PCOS & Fiber</a>
+        <a href="/menopause" class="hover:text-charcoal transition-colors font-medium text-charcoal-light">Menopause & Fiber</a>
+        <a href="/fiber" class="hover:text-charcoal transition-colors">Why Fiber</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    // ---- Nav scroll effect ----
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav-scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // ---- Scroll reveal ----
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-children').forEach(el => observer.observe(el));
+
+    // ---- Email form handling ----
+    function handleSubmit(e, formId) {
+      e.preventDefault();
+      const form = e.target;
+      const email = form.querySelector('input[name="email"]').value;
+
+      // TODO: Replace with your email service endpoint
+      console.log('Email submitted:', email);
+
+      // Store locally as backup
+      const emails = JSON.parse(localStorage.getItem('dayli_waitlist') || '[]');
+      if (!emails.includes(email)) {
+        emails.push(email);
+        localStorage.setItem('dayli_waitlist', JSON.stringify(emails));
+      }
+
+      // Show success
+      form.classList.add('hidden');
+      document.getElementById(formId + '-success').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>

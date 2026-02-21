@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Fiber | Dayli Wellness Co.</title>
+  <meta name="description" content="90% of women aren't getting enough fiber. Dayli builds invisible prebiotic fiber into the protein and electrolytes you already want — no bloating, no grit, no extra steps.">
+  <meta property="og:title" content="Why Fiber | Dayli Wellness Co.">
+  <meta property="og:description" content="The nutrient you're probably missing. Invisible fiber, built into products you actually want.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FAF7F2',
+            'cream-dark': '#F0EBE3',
+            charcoal: '#2D2926',
+            'charcoal-light': '#5C5552',
+            terracotta: '#C4796A',
+            'terracotta-dark': '#A8604F',
+            golden: '#D4A574',
+            sage: '#8BA888',
+            sand: '#E8DFD3',
+          },
+          fontFamily: {
+            serif: ['"DM Serif Display"', 'Georgia', 'serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-children > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal-children.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+    .reveal-children.visible > *:nth-child(2) { transition-delay: 0.12s; opacity: 1; transform: translateY(0); }
+    .reveal-children.visible > *:nth-child(3) { transition-delay: 0.24s; opacity: 1; transform: translateY(0); }
+    .reveal-children.visible > *:nth-child(4) { transition-delay: 0.36s; opacity: 1; transform: translateY(0); }
+    .reveal-children.visible > *:nth-child(5) { transition-delay: 0.48s; opacity: 1; transform: translateY(0); }
+    .reveal-children.visible > *:nth-child(6) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+
+    .nav-scrolled {
+      background: rgba(250, 247, 242, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 3px rgba(45, 41, 38, 0.06);
+    }
+
+    input:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #C4796A;
+    }
+
+    .stat-number {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1;
+      font-weight: 600;
+      color: #C4796A;
+    }
+
+    .btn-primary {
+      transition: background-color 0.2s ease, transform 0.15s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+    }
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-cream text-charcoal font-sans antialiased">
+
+  <!-- ==================== NAV ==================== -->
+  <nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center gap-6">
+        <a href="/" class="text-charcoal tracking-[0.25em] text-sm font-semibold uppercase">
+          Dayli Wellness Co.
+        </a>
+        <a href="/" class="text-charcoal-light/60 text-sm hover:text-charcoal transition-colors hidden sm:inline">Home</a>
+      </div>
+      <a href="#waitlist"
+         class="btn-primary bg-charcoal text-cream px-5 py-2.5 text-sm font-medium rounded-full hover:bg-charcoal-light">
+        Join the Waitlist
+      </a>
+    </div>
+  </nav>
+
+
+  <!-- ==================== HERO ==================== -->
+  <section class="min-h-[85vh] flex flex-col justify-center pt-24 pb-16 px-6">
+    <div class="max-w-6xl mx-auto w-full">
+      <div class="max-w-2xl">
+        <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-4 reveal">Why Fiber</p>
+        <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl leading-[1.1] mb-6 reveal">
+          The Nutrient You're<br>Probably Missing.
+        </h1>
+        <p class="text-charcoal-light text-lg sm:text-xl leading-relaxed max-w-xl mb-10 reveal">
+          Fiber supports your gut, your skin, your hormones, and your energy.
+          Yet 90% of women aren't getting enough. We're here to close the gap
+          — invisibly, effortlessly, and without the bloat.
+        </p>
+
+        <!-- Email Capture -->
+        <form id="hero-form" class="flex flex-col sm:flex-row gap-3 max-w-md reveal" onsubmit="handleSubmit(event, 'hero')">
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Your email"
+            class="flex-1 px-5 py-3 bg-white border border-sand rounded-full text-base placeholder:text-charcoal-light/50"
+          >
+          <button
+            type="submit"
+            class="btn-primary bg-terracotta text-white px-7 py-3 rounded-full text-base font-medium hover:bg-terracotta-dark whitespace-nowrap">
+            Get Early Access
+          </button>
+        </form>
+        <p id="hero-success" class="hidden text-terracotta font-medium mt-4">
+          You're on the list. We'll be in touch soon.
+        </p>
+        <p class="text-charcoal-light/50 text-sm mt-4 reveal">
+          Be first in line. No spam, ever.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== THE GAP ==================== -->
+  <section class="py-24 md:py-32 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-2xl mb-16 reveal">
+        <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-4">The Gap</p>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
+          90% of women aren't<br>getting enough. Are you?
+        </h2>
+        <p class="text-charcoal-light text-lg leading-relaxed">
+          Fiber is the most underleveraged nutrient in wellness. It supports
+          nearly every system in your body — yet the supplement industry keeps
+          ignoring it. Here's what the data says.
+        </p>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 reveal-children">
+        <div class="border-t-2 border-terracotta/20 pt-6">
+          <p class="stat-number font-sans mb-2">90%</p>
+          <p class="text-charcoal-light leading-relaxed">
+            of women don't meet the recommended 25g of daily fiber.
+          </p>
+        </div>
+        <div class="border-t-2 border-terracotta/20 pt-6">
+          <p class="stat-number font-sans mb-2">~15g</p>
+          <p class="text-charcoal-light leading-relaxed">
+            average daily intake — roughly half of what your body needs.
+          </p>
+        </div>
+        <div class="border-t-2 border-terracotta/20 pt-6">
+          <p class="stat-number font-sans mb-2">2005</p>
+          <p class="text-charcoal-light leading-relaxed">
+            the year fiber became a "nutrient of public health concern." It still is.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== BENEFITS ==================== -->
+  <section class="py-24 md:py-32 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-2xl mb-16 reveal">
+        <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-4">Why It Matters</p>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
+          One nutrient.<br>Whole-body impact.
+        </h2>
+        <p class="text-charcoal-light text-lg leading-relaxed">
+          Fiber isn't glamorous. But the science is clear — it quietly supports
+          nearly every system in your body.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal-children">
+        <div class="bg-white rounded-xl p-6">
+          <div class="w-10 h-10 rounded-full bg-terracotta/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-terracotta" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Gut-Skin Axis</h3>
+          <p class="text-charcoal-light text-sm leading-relaxed">
+            A healthier gut microbiome is linked to clearer, more radiant skin.
+            Prebiotic fiber feeds the bacteria that support your glow from within.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6">
+          <div class="w-10 h-10 rounded-full bg-golden/15 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-golden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Hormonal Balance</h3>
+          <p class="text-charcoal-light text-sm leading-relaxed">
+            Fiber helps your body process and clear excess hormones through
+            the estrobolome — the gut bacteria that regulate estrogen metabolism.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6">
+          <div class="w-10 h-10 rounded-full bg-sage/15 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Steady Energy</h3>
+          <p class="text-charcoal-light text-sm leading-relaxed">
+            Soluble fiber slows glucose absorption, reducing the post-meal
+            spikes and energy crashes that derail your afternoon.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6">
+          <div class="w-10 h-10 rounded-full bg-terracotta/10 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-terracotta" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Satiety</h3>
+          <p class="text-charcoal-light text-sm leading-relaxed">
+            Fiber slows gastric emptying, keeping you comfortably full longer
+            — without extra calories or constant snacking.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6">
+          <div class="w-10 h-10 rounded-full bg-golden/15 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-golden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Gut Health</h3>
+          <p class="text-charcoal-light text-sm leading-relaxed">
+            Prebiotic fiber feeds beneficial gut bacteria, supporting a
+            diverse microbiome and reducing everyday bloating.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6">
+          <div class="w-10 h-10 rounded-full bg-sage/15 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-sage" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Beauty From Within</h3>
+          <p class="text-charcoal-light text-sm leading-relaxed">
+            Fiber supports detoxification and reduces inflammation — two
+            drivers of the clear, radiant skin you're after.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== FIBER TYPES ==================== -->
+  <section class="py-24 md:py-32 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-2xl mb-16 reveal">
+        <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-4">Fiber, Reimagined</p>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
+          Invisible fiber.<br>Not invisible results.
+        </h2>
+        <p class="text-charcoal-light text-lg leading-relaxed">
+          Not all fiber is created equal. Most fiber supplements use ingredients
+          that cause bloating, gas, or gritty textures. We use PHGG — a clinically
+          studied prebiotic fiber that dissolves completely clear with zero taste.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
+        <!-- Left: Explainer -->
+        <div class="reveal">
+          <h3 class="font-serif text-2xl mb-4">What is PHGG?</h3>
+          <p class="text-charcoal-light leading-relaxed mb-4">
+            Partially hydrolyzed guar gum (PHGG) is a soluble prebiotic fiber
+            sourced from guar beans. Unlike psyllium or inulin, it dissolves
+            completely in water — no grit, no gel, no bloating.
+          </p>
+          <p class="text-charcoal-light leading-relaxed mb-6">
+            It's low-FODMAP certified, meaning it's gentle enough for sensitive
+            stomachs. And because it doesn't ferment aggressively in the gut,
+            you get the benefits of fiber without the gas and discomfort that
+            make most people quit.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-2 shrink-0"></span>
+              Dissolves completely clear — invisible in any drink
+            </li>
+            <li class="flex items-start gap-3 text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-2 shrink-0"></span>
+              Zero taste, zero grit, zero texture change
+            </li>
+            <li class="flex items-start gap-3 text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-2 shrink-0"></span>
+              Low-FODMAP certified — gentle on sensitive systems
+            </li>
+            <li class="flex items-start gap-3 text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-2 shrink-0"></span>
+              Clinically studied prebiotic — feeds beneficial gut bacteria
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Comparison Cards -->
+        <div class="space-y-4 reveal">
+          <!-- PHGG -->
+          <div class="bg-cream rounded-xl p-6 border-2 border-terracotta/30">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="font-semibold text-lg">PHGG (Sunfiber)</h4>
+              <span class="text-xs font-semibold text-white bg-terracotta px-3 py-1 rounded-full">What we use</span>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs bg-terracotta/10 text-terracotta px-2.5 py-1 rounded-full">Dissolves clear</span>
+              <span class="text-xs bg-terracotta/10 text-terracotta px-2.5 py-1 rounded-full">No bloating</span>
+              <span class="text-xs bg-terracotta/10 text-terracotta px-2.5 py-1 rounded-full">Low-FODMAP</span>
+              <span class="text-xs bg-terracotta/10 text-terracotta px-2.5 py-1 rounded-full">Tasteless</span>
+            </div>
+            <p class="text-charcoal-light text-sm leading-relaxed">
+              Gentle prebiotic that supports regularity without gas, urgency, or discomfort. Invisible in any drink.
+            </p>
+          </div>
+
+          <!-- Psyllium -->
+          <div class="bg-cream rounded-xl p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="font-semibold text-lg text-charcoal-light">Psyllium Husk</h4>
+              <span class="text-xs font-medium text-charcoal-light/60 px-3 py-1 rounded-full bg-sand">Common alternative</span>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">Gritty texture</span>
+              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">Gas & bloating</span>
+              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">Gelatinous</span>
+            </div>
+            <p class="text-charcoal-light text-sm leading-relaxed">
+              Effective for regularity, but the chalky texture, aggressive fermentation, and bloating
+              cause many people to quit before seeing benefits.
+            </p>
+          </div>
+
+          <!-- Inulin -->
+          <div class="bg-cream rounded-xl p-6">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="font-semibold text-lg text-charcoal-light">Inulin / Chicory Root</h4>
+              <span class="text-xs font-medium text-charcoal-light/60 px-3 py-1 rounded-full bg-sand">Common alternative</span>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">Significant gas</span>
+              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">Rapid fermentation</span>
+              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">High-FODMAP</span>
+            </div>
+            <p class="text-charcoal-light text-sm leading-relaxed">
+              Found in many "prebiotic" products, but ferments aggressively in the gut — causing
+              gas, distension, and discomfort, especially for sensitive systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== PRODUCTS ==================== -->
+  <section class="py-24 md:py-32 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-2xl mb-16 reveal">
+        <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-4">The Lineup</p>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
+          Fiber-first. Built into the<br>products you already want.
+        </h2>
+        <p class="text-charcoal-light text-lg leading-relaxed">
+          We don't sell standalone fiber you dread taking. We build invisible
+          prebiotic fiber into protein and electrolytes — so closing the gap
+          is effortless.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+
+        <!-- Product 1: NO WHEY! -->
+        <div class="bg-white rounded-2xl p-8 md:p-10 reveal">
+          <div class="flex justify-center mb-8">
+            <img
+              src="images/product-tub.png"
+              alt="NO WHEY! (+Fiber) — Beef protein + collagen + fiber tub"
+              class="h-56 md:h-64 object-contain"
+              loading="lazy"
+            >
+          </div>
+          <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-2">Dairy-Free Protein</p>
+          <h3 class="font-serif text-2xl md:text-3xl mb-4">NO WHEY! (+Fiber)</h3>
+          <p class="text-charcoal-light leading-relaxed mb-6">
+            25g of dairy-free protein from grass-fed beef and collagen, plus 5g
+            of invisible prebiotic fiber. A protein shake that finally remembers
+            the nutrient you need most.
+          </p>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-3 text-sm text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-1.5 shrink-0"></span>
+              25g protein (grass-fed beef isolate + collagen peptides)
+            </li>
+            <li class="flex items-start gap-3 text-sm text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-1.5 shrink-0"></span>
+              5g prebiotic fiber (Sunfiber — tasteless, low-FODMAP)
+            </li>
+            <li class="flex items-start gap-3 text-sm text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-1.5 shrink-0"></span>
+              Dairy-free, gluten-free, soy-free
+            </li>
+            <li class="flex items-start gap-3 text-sm text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-1.5 shrink-0"></span>
+              No artificial sweeteners — monk fruit + stevia
+            </li>
+          </ul>
+        </div>
+
+        <!-- Product 2: Electrolytes + Fiber -->
+        <div class="bg-white rounded-2xl p-8 md:p-10 reveal">
+          <div class="flex justify-center items-center mb-8 h-56 md:h-64">
+            <div class="text-center">
+              <div class="w-32 h-40 mx-auto rounded-xl bg-gradient-to-b from-sage/20 to-sage/5 flex items-center justify-center mb-4">
+                <svg class="w-12 h-12 text-sage/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+                </svg>
+              </div>
+              <p class="text-charcoal-light/40 text-sm italic">Render coming soon</p>
+            </div>
+          </div>
+          <p class="text-sage font-semibold text-sm tracking-wide uppercase mb-2">Daily Hydration</p>
+          <h3 class="font-serif text-2xl md:text-3xl mb-4">Electrolytes + Fiber</h3>
+          <p class="text-charcoal-light leading-relaxed mb-6">
+            The only electrolyte drink with 5g of prebiotic fiber. Completely
+            invisible in water. Refreshing hydration that quietly closes the
+            fiber gap with every sip.
+          </p>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-3 text-sm text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-sage mt-1.5 shrink-0"></span>
+              450mg sodium, 250mg potassium, 80mg magnesium
+            </li>
+            <li class="flex items-start gap-3 text-sm text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-sage mt-1.5 shrink-0"></span>
+              5g prebiotic fiber — dissolves completely clear
+            </li>
+            <li class="flex items-start gap-3 text-sm text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-sage mt-1.5 shrink-0"></span>
+              Zero sugar, under 10 calories per stick
+            </li>
+            <li class="flex items-start gap-3 text-sm text-charcoal-light">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-sage mt-1.5 shrink-0"></span>
+              Convenient stick packs — toss one in your bag
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== MANIFESTO ==================== -->
+  <section class="py-24 md:py-32 px-6 bg-white">
+    <div class="max-w-3xl mx-auto text-center reveal">
+      <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-8">Our Approach</p>
+
+      <div class="font-serif text-2xl sm:text-3xl md:text-[2rem] leading-relaxed text-charcoal/90 space-y-6">
+        <p>
+          Each ingredient is part of the whole. Not the whole point.
+        </p>
+        <p>
+          Protein without context is incomplete. Nourishment without
+          digestion doesn't deliver. That's why every product we make
+          starts with fiber — the foundation that helps everything
+          else work.
+        </p>
+      </div>
+
+      <div class="mt-12 pt-10 border-t border-sand">
+        <p class="font-serif text-xl text-terracotta">
+          This is health, in full color. This is the Dayli way.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== WAITLIST CTA ==================== -->
+  <section id="waitlist" class="py-24 md:py-32 px-6">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
+        Fiber, finally.
+      </h2>
+      <p class="text-charcoal-light text-lg leading-relaxed mb-10 max-w-lg mx-auto">
+        We're launching soon. Join the waitlist for early access,
+        founding member pricing, and a front-row seat to fiber-first nutrition.
+      </p>
+
+      <form id="footer-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="handleSubmit(event, 'footer')">
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Your email"
+          class="flex-1 px-5 py-3.5 bg-white border border-sand rounded-full text-base placeholder:text-charcoal-light/50"
+        >
+        <button
+          type="submit"
+          class="btn-primary bg-terracotta text-white px-7 py-3.5 rounded-full text-base font-medium hover:bg-terracotta-dark whitespace-nowrap">
+          Join the Waitlist
+        </button>
+      </form>
+      <p id="footer-success" class="hidden text-terracotta font-medium mt-4">
+        You're on the list. We'll be in touch soon.
+      </p>
+      <p class="text-charcoal-light/50 text-sm mt-4">
+        No spam. Just the good stuff, when it's ready.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-12 px-6 border-t border-sand">
+    <div class="max-w-6xl mx-auto flex flex-col items-center gap-4">
+      <div class="flex flex-col sm:flex-row items-center justify-between w-full gap-4">
+        <a href="/" class="text-charcoal tracking-[0.25em] text-sm font-semibold uppercase">
+          Dayli Wellness Co.
+        </a>
+        <p class="text-charcoal-light/50 text-sm">
+          &copy; 2026 Dayli Wellness Co. All rights reserved.
+        </p>
+      </div>
+      <div class="flex gap-6 text-sm text-charcoal-light/60">
+        <a href="/pcos" class="hover:text-charcoal transition-colors">PCOS & Fiber</a>
+        <a href="/menopause" class="hover:text-charcoal transition-colors">Menopause & Fiber</a>
+        <a href="/fiber" class="hover:text-charcoal transition-colors font-medium text-charcoal-light">Why Fiber</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    // ---- Nav scroll effect ----
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav-scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // ---- Scroll reveal ----
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-children').forEach(el => observer.observe(el));
+
+    // ---- Email form handling ----
+    function handleSubmit(e, formId) {
+      e.preventDefault();
+      const form = e.target;
+      const email = form.querySelector('input[name="email"]').value;
+
+      // TODO: Replace with your email service endpoint
+      console.log('Email submitted:', email);
+
+      // Store locally as backup
+      const emails = JSON.parse(localStorage.getItem('dayli_waitlist') || '[]');
+      if (!emails.includes(email)) {
+        emails.push(email);
+        localStorage.setItem('dayli_waitlist', JSON.stringify(emails));
+      }
+
+      // Show success
+      form.classList.add('hidden');
+      document.getElementById(formId + '-success').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
