@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Why Fiber | Dayli Wellness Co.</title>
-  <meta name="description" content="90% of women aren't getting enough fiber. Dayli builds invisible prebiotic fiber into the protein and electrolytes you already want — no bloating, no grit, no extra steps.">
+  <meta name="description" content="90% of women aren't getting enough fiber. Dayli builds the fiber you're missing into the things you already reach for — clear-dissolving electrolytes and a whole-food fiber blend you turn into real-fruit jam. No bloating, no grit, no extra steps.">
   <meta property="og:title" content="Why Fiber | Dayli Wellness Co.">
   <meta property="og:description" content="The nutrient you're probably missing. Invisible fiber, built into products you actually want.">
   <meta property="og:type" content="website">
@@ -70,6 +70,36 @@
       -webkit-backdrop-filter: blur(12px);
       box-shadow: 0 1px 3px rgba(45, 41, 38, 0.06);
     }
+
+    /* Product pouch mockup — CSS stand-in until photographic renders are ready */
+    .pouch {
+      position: relative;
+      width: 100%;
+      max-width: 210px;
+      aspect-ratio: 4 / 5;
+      border-radius: 18px 18px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2.25rem 1.4rem;
+      color: #fff;
+      box-shadow: 0 22px 45px -18px rgba(45, 41, 38, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+    .pouch::before {
+      content: "";
+      position: absolute;
+      top: 9px; left: 50%; transform: translateX(-50%);
+      width: 48%; height: 7px; border-radius: 99px;
+      background: rgba(255, 255, 255, 0.40);
+    }
+    .pouch .pouch-mark { font-size: 0.72rem; letter-spacing: 0.32em; font-weight: 600; text-transform: uppercase; opacity: 0.92; }
+    .pouch .pouch-name { font-family: "DM Serif Display", Georgia, serif; font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.04; margin-top: 0.9rem; }
+    .pouch .pouch-sub { font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 0.55rem; opacity: 0.95; }
+    .pouch .pouch-claim { margin-top: 1.3rem; padding-top: 0.8rem; font-size: 0.66rem; letter-spacing: 0.03em; opacity: 0.92; border-top: 1px solid rgba(255, 255, 255, 0.32); }
+    .pouch--jam { background: linear-gradient(158deg, #C4796A 0%, #934C54 100%); }
+    .pouch--electrolyte { background: linear-gradient(158deg, #E0AE7E 0%, #C4796A 55%, #BC6177 100%); }
 
     input:focus {
       outline: none;
@@ -290,59 +320,60 @@
   <section class="py-24 md:py-32 px-6 bg-white">
     <div class="max-w-6xl mx-auto">
       <div class="max-w-2xl mb-16 reveal">
-        <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-4">Fiber, Reimagined</p>
+        <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-4">Fiber, Done Right</p>
         <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
-          Invisible fiber.<br>Not invisible results.
+          The right fiber<br>for the job.
         </h2>
         <p class="text-charcoal-light text-lg leading-relaxed">
-          Not all fiber is created equal. Most fiber supplements use ingredients
-          that cause bloating, gas, or gritty textures. We use PHGG — a clinically
-          studied prebiotic fiber that dissolves completely clear with zero taste.
+          Not all fiber is created equal — and different jobs call for different
+          fibers. So we use two. One disappears into your water. The other turns
+          fruit into jam. Both feed your gut; neither leaves you bloated.
         </p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
         <!-- Left: Explainer -->
         <div class="reveal">
-          <h3 class="font-serif text-2xl mb-4">What is PHGG?</h3>
+          <h3 class="font-serif text-2xl mb-4">Two fibers, two jobs</h3>
           <p class="text-charcoal-light leading-relaxed mb-4">
-            Partially hydrolyzed guar gum (PHGG) is a soluble prebiotic fiber
-            sourced from guar beans. Unlike psyllium or inulin, it dissolves
-            completely in water — no grit, no gel, no bloating.
+            In <span class="font-medium text-charcoal">Electrolytes + Fiber</span>, we use a
+            soluble fiber that dissolves completely clear — no grit, no gel, no taste. It's
+            gentle and low-FODMAP, so it feeds your gut without the gas and bloating that
+            make most people quit.
           </p>
           <p class="text-charcoal-light leading-relaxed mb-6">
-            It's low-FODMAP certified, meaning it's gentle enough for sensitive
-            stomachs. And because it doesn't ferment aggressively in the gut,
-            you get the benefits of fiber without the gas and discomfort that
-            make most people quit.
+            In <span class="font-medium text-charcoal">JamPact</span>, we do the opposite on
+            purpose. Whole-food fibers like chia, psyllium, and golden flax are chosen
+            <em>because</em> they gel — that's what sets real fruit into a spreadable,
+            high-fiber jam. The texture isn't a side effect; it's the point.
           </p>
           <ul class="space-y-3">
             <li class="flex items-start gap-3 text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-2 shrink-0"></span>
-              Dissolves completely clear — invisible in any drink
+              No inulin or chicory root — the high-FODMAP fibers behind most bloating complaints
             </li>
             <li class="flex items-start gap-3 text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-2 shrink-0"></span>
-              Zero taste, zero grit, zero texture change
+              Soluble and insoluble fiber across the lineup, like a real-food diet
             </li>
             <li class="flex items-start gap-3 text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-2 shrink-0"></span>
-              Low-FODMAP certified — gentle on sensitive systems
+              Prebiotic by design — fiber that feeds beneficial gut bacteria
             </li>
             <li class="flex items-start gap-3 text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-2 shrink-0"></span>
-              Clinically studied prebiotic — feeds beneficial gut bacteria
+              Whole-food sources, not lab-isolated fillers
             </li>
           </ul>
         </div>
 
-        <!-- Right: Comparison Cards -->
+        <!-- Right: Two fiber systems -->
         <div class="space-y-4 reveal">
-          <!-- PHGG -->
+          <!-- Clear soluble fiber (drink) -->
           <div class="bg-cream rounded-xl p-6 border-2 border-terracotta/30">
             <div class="flex items-center justify-between mb-3">
-              <h4 class="font-semibold text-lg">PHGG (Sunfiber)</h4>
-              <span class="text-xs font-semibold text-white bg-terracotta px-3 py-1 rounded-full">What we use</span>
+              <h4 class="font-semibold text-lg">Clear soluble fiber</h4>
+              <span class="text-xs font-semibold text-white bg-terracotta px-3 py-1 rounded-full">In your water</span>
             </div>
             <div class="flex flex-wrap gap-2 mb-3">
               <span class="text-xs bg-terracotta/10 text-terracotta px-2.5 py-1 rounded-full">Dissolves clear</span>
@@ -351,41 +382,26 @@
               <span class="text-xs bg-terracotta/10 text-terracotta px-2.5 py-1 rounded-full">Tasteless</span>
             </div>
             <p class="text-charcoal-light text-sm leading-relaxed">
-              Gentle prebiotic that supports regularity without gas, urgency, or discomfort. Invisible in any drink.
+              The prebiotic fiber in Electrolytes + Fiber. Gentle, invisible, and effective —
+              5g in every glass, with zero change to taste or texture.
             </p>
           </div>
 
-          <!-- Psyllium -->
-          <div class="bg-cream rounded-xl p-6">
+          <!-- Whole-food gelling fibers (jam) -->
+          <div class="bg-cream rounded-xl p-6 border-2 border-sage/40">
             <div class="flex items-center justify-between mb-3">
-              <h4 class="font-semibold text-lg text-charcoal-light">Psyllium Husk</h4>
-              <span class="text-xs font-medium text-charcoal-light/60 px-3 py-1 rounded-full bg-sand">Common alternative</span>
+              <h4 class="font-semibold text-lg">Whole-food gelling fibers</h4>
+              <span class="text-xs font-semibold text-white bg-sage px-3 py-1 rounded-full">In your jam</span>
             </div>
             <div class="flex flex-wrap gap-2 mb-3">
-              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">Gritty texture</span>
-              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">Gas & bloating</span>
-              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">Gelatinous</span>
+              <span class="text-xs bg-sage/15 text-sage px-2.5 py-1 rounded-full">Chia</span>
+              <span class="text-xs bg-sage/15 text-sage px-2.5 py-1 rounded-full">Psyllium</span>
+              <span class="text-xs bg-sage/15 text-sage px-2.5 py-1 rounded-full">Golden flax</span>
+              <span class="text-xs bg-sage/15 text-sage px-2.5 py-1 rounded-full">Baobab</span>
             </div>
             <p class="text-charcoal-light text-sm leading-relaxed">
-              Effective for regularity, but the chalky texture, aggressive fermentation, and bloating
-              cause many people to quit before seeing benefits.
-            </p>
-          </div>
-
-          <!-- Inulin -->
-          <div class="bg-cream rounded-xl p-6">
-            <div class="flex items-center justify-between mb-3">
-              <h4 class="font-semibold text-lg text-charcoal-light">Inulin / Chicory Root</h4>
-              <span class="text-xs font-medium text-charcoal-light/60 px-3 py-1 rounded-full bg-sand">Common alternative</span>
-            </div>
-            <div class="flex flex-wrap gap-2 mb-3">
-              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">Significant gas</span>
-              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">Rapid fermentation</span>
-              <span class="text-xs bg-charcoal/5 text-charcoal-light px-2.5 py-1 rounded-full">High-FODMAP</span>
-            </div>
-            <p class="text-charcoal-light text-sm leading-relaxed">
-              Found in many "prebiotic" products, but ferments aggressively in the gut — causing
-              gas, distension, and discomfort, especially for sensitive systems.
+              The six whole-food fibers in JamPact. They gel on purpose — turning real fruit
+              into a spreadable, high-fiber jam, with baobab and turkey tail along for the ride.
             </p>
           </div>
         </div>
@@ -403,47 +419,47 @@
           Fiber-first. Built into the<br>products you already want.
         </h2>
         <p class="text-charcoal-light text-lg leading-relaxed">
-          We don't sell standalone fiber you dread taking. We build invisible
-          prebiotic fiber into protein and electrolytes — so closing the gap
-          is effortless.
+          We don't sell chalky fiber you dread taking. We make fiber the
+          foundation of every product — invisible in your water, or the star of
+          a real-fruit jam — so closing the gap is effortless.
         </p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
 
-        <!-- Product 1: NO WHEY! -->
+        <!-- Product 1: JamPact -->
         <div class="bg-white rounded-2xl p-8 md:p-10 reveal">
-          <div class="flex justify-center mb-8">
-            <img
-              src="images/product-tub.png"
-              alt="NO WHEY! (+Fiber) — Beef protein + collagen + fiber tub"
-              class="h-56 md:h-64 object-contain"
-              loading="lazy"
-            >
+          <div class="flex justify-center items-center mb-8 h-56 md:h-64">
+            <div class="pouch pouch--jam">
+              <span class="pouch-mark">Dayli</span>
+              <span class="pouch-name">JamPact</span>
+              <span class="pouch-sub">Whole-Food Fiber</span>
+              <span class="pouch-claim">Make your own high-fiber jam</span>
+            </div>
           </div>
-          <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-2">Dairy-Free Protein</p>
-          <h3 class="font-serif text-2xl md:text-3xl mb-4">NO WHEY! (+Fiber)</h3>
+          <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-2">Whole-Food Fiber</p>
+          <h3 class="font-serif text-2xl md:text-3xl mb-4">JamPact</h3>
           <p class="text-charcoal-light leading-relaxed mb-6">
-            25g of dairy-free protein from grass-fed beef and collagen, plus 5g
-            of invisible prebiotic fiber. A protein shake that finally remembers
-            the nutrient you need most.
+            Six whole-food fibers in one daily scoop. Stir it into mashed fruit
+            or juice, let it set, and it becomes a real-fruit jam — no store-bought
+            pectin, no added sugar. Fiber the way nature packaged it.
           </p>
           <ul class="space-y-2.5">
             <li class="flex items-start gap-3 text-sm text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-1.5 shrink-0"></span>
-              25g protein (grass-fed beef isolate + collagen peptides)
+              Chia, psyllium, golden flax, apple fiber, baobab &amp; turkey tail
             </li>
             <li class="flex items-start gap-3 text-sm text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-1.5 shrink-0"></span>
-              5g prebiotic fiber (Sunfiber — tasteless, low-FODMAP)
+              A real daily dose of whole-food fiber per scoop
             </li>
             <li class="flex items-start gap-3 text-sm text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-1.5 shrink-0"></span>
-              Dairy-free, gluten-free, soy-free
+              Unflavored — it takes on whatever fruit you add
             </li>
             <li class="flex items-start gap-3 text-sm text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-1.5 shrink-0"></span>
-              No artificial sweeteners — monk fruit + stevia
+              Sugar-free, vegan, gluten-free, soy-free, non-GMO
             </li>
           </ul>
         </div>
@@ -451,38 +467,36 @@
         <!-- Product 2: Electrolytes + Fiber -->
         <div class="bg-white rounded-2xl p-8 md:p-10 reveal">
           <div class="flex justify-center items-center mb-8 h-56 md:h-64">
-            <div class="text-center">
-              <div class="w-32 h-40 mx-auto rounded-xl bg-gradient-to-b from-sage/20 to-sage/5 flex items-center justify-center mb-4">
-                <svg class="w-12 h-12 text-sage/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
-                </svg>
-              </div>
-              <p class="text-charcoal-light/40 text-sm italic">Render coming soon</p>
+            <div class="pouch pouch--electrolyte">
+              <span class="pouch-mark">Dayli</span>
+              <span class="pouch-name">Electrolytes<br>+ Fiber</span>
+              <span class="pouch-sub">Raspberry Lemonade</span>
+              <span class="pouch-claim">5g Fiber &middot; Zero Sugar</span>
             </div>
           </div>
           <p class="text-sage font-semibold text-sm tracking-wide uppercase mb-2">Daily Hydration</p>
           <h3 class="font-serif text-2xl md:text-3xl mb-4">Electrolytes + Fiber</h3>
           <p class="text-charcoal-light leading-relaxed mb-6">
-            The only electrolyte drink with 5g of prebiotic fiber. Completely
-            invisible in water. Refreshing hydration that quietly closes the
-            fiber gap with every sip.
+            The only electrolyte mix with 5g of prebiotic fiber. It dissolves
+            completely clear, so refreshing Raspberry Lemonade hydration quietly
+            closes the fiber gap with every sip.
           </p>
           <ul class="space-y-2.5">
             <li class="flex items-start gap-3 text-sm text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-sage mt-1.5 shrink-0"></span>
-              450mg sodium, 250mg potassium, 80mg magnesium
+              450mg sodium, 250mg potassium, 80mg magnesium glycinate, 50mg calcium
             </li>
             <li class="flex items-start gap-3 text-sm text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-sage mt-1.5 shrink-0"></span>
-              5g prebiotic fiber — dissolves completely clear
+              5g prebiotic soluble fiber — dissolves completely clear
             </li>
             <li class="flex items-start gap-3 text-sm text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-sage mt-1.5 shrink-0"></span>
-              Zero sugar, under 10 calories per stick
+              Zero sugar, under 10 calories, sweetened with allulose + monk fruit
             </li>
             <li class="flex items-start gap-3 text-sm text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-sage mt-1.5 shrink-0"></span>
-              Convenient stick packs — toss one in your bag
+              Available as a tub or grab-and-go stick packs
             </li>
           </ul>
         </div>
@@ -502,7 +516,7 @@
           Each ingredient is part of the whole. Not the whole point.
         </p>
         <p>
-          Protein without context is incomplete. Nourishment without
+          A single nutrient in isolation is incomplete. Nourishment without
           digestion doesn't deliver. That's why every product we make
           starts with fiber — the foundation that helps everything
           else work.

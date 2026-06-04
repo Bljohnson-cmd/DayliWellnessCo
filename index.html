@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dayli Wellness Co. | Health in Full Color</title>
-  <meta name="description" content="Fiber-first daily nutrition. Every Dayli product starts with fiber — the nutrient 95% of Americans are missing — and builds in the protein, electrolytes, and function you actually want.">
+  <meta name="description" content="Fiber-first daily nutrition. Dayli builds the fiber 95% of Americans are missing into the things you actually reach for — refreshing electrolytes that dissolve clear, and a whole-food fiber blend you turn into real-fruit jam.">
   <meta property="og:title" content="Dayli Wellness Co. | Health in Full Color">
-  <meta property="og:description" content="Fiber-first daily nutrition designed for how you actually live. Join the waitlist.">
+  <meta property="og:description" content="Fiber-first daily nutrition designed for how you actually live. Two ways to close the fiber gap. Join the waitlist.">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -82,6 +82,64 @@
       animation: float 6s ease-in-out infinite;
     }
 
+    /* Product pouch mockup — CSS stand-in until photographic renders are ready */
+    .pouch {
+      position: relative;
+      width: 100%;
+      max-width: 220px;
+      aspect-ratio: 4 / 5;
+      border-radius: 18px 18px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2.25rem 1.4rem;
+      color: #fff;
+      box-shadow: 0 22px 45px -18px rgba(45, 41, 38, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+    .pouch::before { /* top seal */
+      content: "";
+      position: absolute;
+      top: 9px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 48%;
+      height: 7px;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.40);
+    }
+    .pouch .pouch-mark {
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      font-weight: 600;
+      text-transform: uppercase;
+      opacity: 0.92;
+    }
+    .pouch .pouch-name {
+      font-family: "DM Serif Display", Georgia, serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      line-height: 1.04;
+      margin-top: 0.9rem;
+    }
+    .pouch .pouch-sub {
+      font-size: 0.66rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-top: 0.55rem;
+      opacity: 0.95;
+    }
+    .pouch .pouch-claim {
+      margin-top: 1.3rem;
+      padding-top: 0.8rem;
+      font-size: 0.66rem;
+      letter-spacing: 0.03em;
+      opacity: 0.92;
+      border-top: 1px solid rgba(255, 255, 255, 0.32);
+    }
+    .pouch--jam { background: linear-gradient(158deg, #C4796A 0%, #934C54 100%); }
+    .pouch--electrolyte { background: linear-gradient(158deg, #E0AE7E 0%, #C4796A 55%, #BC6177 100%); }
+
     /* Form focus ring */
     input:focus {
       outline: none;
@@ -138,9 +196,9 @@
           Health in<br>Full Color.
         </h1>
         <p class="text-charcoal-light text-lg sm:text-xl leading-relaxed max-w-xl mb-10 reveal">
-          Fiber-first daily nutrition. Every product starts with the nutrient
-          95% of Americans are missing — then adds the protein, electrolytes,
-          and function you actually want.
+          Fiber-first daily nutrition. We take the nutrient 95% of Americans
+          are missing and build it into the things you actually reach for —
+          your water, and your morning toast.
         </p>
 
         <!-- Email Capture -->
@@ -168,12 +226,21 @@
 
       <!-- Product Lineup -->
       <div class="mt-16 md:mt-20 reveal">
-        <img
-          src="images/product-lineup.png"
-          alt="Dayli Wellness Co. product lineup — six colorful pouches of NO WHEY! protein plus fiber"
-          class="w-full max-w-3xl mx-auto product-float"
-          loading="eager"
-        >
+        <div class="flex flex-wrap items-end justify-center gap-6 sm:gap-10 max-w-2xl mx-auto">
+          <div class="pouch pouch--electrolyte product-float" style="animation-delay: -3s;">
+            <span class="pouch-mark">Dayli</span>
+            <span class="pouch-name">Electrolytes<br>+ Fiber</span>
+            <span class="pouch-sub">Raspberry Lemonade</span>
+            <span class="pouch-claim">5g Fiber &middot; 4 Electrolytes &middot; Zero Sugar</span>
+          </div>
+          <div class="pouch pouch--jam product-float">
+            <span class="pouch-mark">Dayli</span>
+            <span class="pouch-name">JamPact</span>
+            <span class="pouch-sub">Whole-Food Fiber</span>
+            <span class="pouch-claim">6 Whole Fibers &middot; Make Real-Fruit Jam</span>
+          </div>
+        </div>
+        <p class="text-center text-charcoal-light/40 text-xs mt-6 italic">Product visuals in development.</p>
       </div>
     </div>
   </section>
@@ -228,9 +295,9 @@
           Fiber-first.<br>Never an afterthought.
         </h2>
         <p class="text-charcoal-light text-lg leading-relaxed">
-          We don't sell standalone fiber supplements you dread taking.
-          We build fiber into the products you already want — so closing
-          the gap is effortless.
+          We don't sell chalky fiber supplements you dread. We make fiber the
+          foundation — sometimes invisible in your water, sometimes the star of
+          a real-fruit jam — so closing the gap is something you look forward to.
         </p>
       </div>
 
@@ -242,10 +309,11 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/>
             </svg>
           </div>
-          <h3 class="font-serif text-xl mb-3">Built In, Not Bolted On</h3>
+          <h3 class="font-serif text-xl mb-3">Fiber, First</h3>
           <p class="text-charcoal-light leading-relaxed">
-            Every Dayli product starts with 5g of prebiotic fiber — completely
-            invisible in taste, texture, and experience. It's just there, working.
+            Every Dayli product is built around fiber — the nutrient your gut,
+            hormones, energy, and skin quietly depend on. Not bolted on. The
+            foundation.
           </p>
         </div>
         <div>
@@ -254,11 +322,11 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/>
             </svg>
           </div>
-          <h3 class="font-serif text-xl mb-3">Complete Nourishment</h3>
+          <h3 class="font-serif text-xl mb-3">Two Ways to Close the Gap</h3>
           <p class="text-charcoal-light leading-relaxed">
-            Each ingredient is part of the whole, not the whole point. Protein
-            without context is incomplete. Nourishment without digestion doesn't
-            deliver.
+            Stir it into your water and never taste it. Or whip it into a
+            real-fruit jam you'll actually crave. Same mission — your ritual,
+            your choice.
           </p>
         </div>
         <div>
@@ -269,8 +337,8 @@
           </div>
           <h3 class="font-serif text-xl mb-3">Made for Real Life</h3>
           <p class="text-charcoal-light leading-relaxed">
-            Scoops and stick packs that fit your morning, your gym bag, your
-            desk drawer. No prep, no fuss, no weird texture. Just daily.
+            A stick pack for your bag. A scoop for your morning toast. No chalk,
+            no grit, no fuss — just fiber that fits the day you already have.
           </p>
         </div>
       </div>
@@ -290,39 +358,40 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
 
-        <!-- Product 1: NO WHEY! -->
+        <!-- Product 1: JamPact -->
         <div class="bg-cream rounded-2xl p-8 md:p-10 reveal">
-          <div class="flex justify-center mb-8">
-            <img
-              src="images/product-tub.png"
-              alt="NO WHEY! (+Fiber) — Beef protein + collagen + fiber tub"
-              class="h-64 md:h-72 object-contain"
-              loading="lazy"
-            >
+          <div class="flex justify-center items-center mb-8 h-64 md:h-72">
+            <div class="pouch pouch--jam">
+              <span class="pouch-mark">Dayli</span>
+              <span class="pouch-name">JamPact</span>
+              <span class="pouch-sub">Whole-Food Fiber</span>
+              <span class="pouch-claim">Make your own high-fiber jam</span>
+            </div>
           </div>
-          <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-2">Dairy-Free Protein</p>
-          <h3 class="font-serif text-2xl md:text-3xl mb-4">NO WHEY! (+Fiber)</h3>
+          <p class="text-terracotta font-semibold text-sm tracking-wide uppercase mb-2">Whole-Food Fiber</p>
+          <h3 class="font-serif text-2xl md:text-3xl mb-4">JamPact</h3>
           <p class="text-charcoal-light leading-relaxed mb-6">
-            25g of dairy-free protein from grass-fed beef and collagen, plus 5g
-            of invisible prebiotic fiber. A protein shake that finally remembers
-            the nutrient you need most.
+            Six whole-food fibers in one daily scoop. Stir it into mashed fruit
+            or juice, let it set, and it becomes a real-fruit jam — no store-bought
+            pectin, no added sugar, just fiber the way nature packaged it. (Also
+            brilliant stirred into yogurt, oats, or a smoothie.)
           </p>
           <ul class="space-y-2.5">
             <li class="flex items-start gap-3 text-sm text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-1.5 shrink-0"></span>
-              25g protein (grass-fed beef isolate + collagen peptides)
+              Chia, psyllium, golden flax, apple fiber, baobab &amp; turkey tail mushroom
             </li>
             <li class="flex items-start gap-3 text-sm text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-1.5 shrink-0"></span>
-              5g prebiotic fiber (Sunfiber — tasteless, low-FODMAP)
+              A real daily dose of whole-food fiber per scoop
             </li>
             <li class="flex items-start gap-3 text-sm text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-1.5 shrink-0"></span>
-              Dairy-free, gluten-free, soy-free, paleo &amp; keto friendly
+              Unflavored — it takes on whatever fruit you add
             </li>
             <li class="flex items-start gap-3 text-sm text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-terracotta mt-1.5 shrink-0"></span>
-              No artificial sweeteners — monk fruit + stevia (Reb-M)
+              Sugar-free, vegan, gluten-free, soy-free, non-GMO
             </li>
           </ul>
         </div>
@@ -330,39 +399,36 @@
         <!-- Product 2: Electrolytes + Fiber -->
         <div class="bg-cream rounded-2xl p-8 md:p-10 reveal">
           <div class="flex justify-center items-center mb-8 h-64 md:h-72">
-            <!-- Placeholder for electrolyte product render -->
-            <div class="text-center">
-              <div class="w-32 h-40 mx-auto rounded-xl bg-gradient-to-b from-sage/20 to-sage/5 flex items-center justify-center mb-4">
-                <svg class="w-12 h-12 text-sage/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
-                </svg>
-              </div>
-              <p class="text-charcoal-light/40 text-sm italic">Render coming soon</p>
+            <div class="pouch pouch--electrolyte">
+              <span class="pouch-mark">Dayli</span>
+              <span class="pouch-name">Electrolytes<br>+ Fiber</span>
+              <span class="pouch-sub">Raspberry Lemonade</span>
+              <span class="pouch-claim">5g Fiber &middot; Zero Sugar</span>
             </div>
           </div>
           <p class="text-sage font-semibold text-sm tracking-wide uppercase mb-2">Daily Hydration</p>
           <h3 class="font-serif text-2xl md:text-3xl mb-4">Electrolytes + Fiber</h3>
           <p class="text-charcoal-light leading-relaxed mb-6">
-            The only electrolyte drink with 5g of prebiotic fiber. Completely
-            invisible in water. Refreshing, effective hydration that quietly
+            The only electrolyte mix with 5g of prebiotic fiber. It dissolves
+            completely clear, so a glass of refreshing Raspberry Lemonade quietly
             closes the fiber gap with every sip.
           </p>
           <ul class="space-y-2.5">
             <li class="flex items-start gap-3 text-sm text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-sage mt-1.5 shrink-0"></span>
-              450mg sodium, 250mg potassium, 80mg magnesium
+              450mg sodium, 250mg potassium, 80mg magnesium glycinate, 50mg calcium
             </li>
             <li class="flex items-start gap-3 text-sm text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-sage mt-1.5 shrink-0"></span>
-              5g prebiotic fiber — dissolves completely clear
+              5g prebiotic soluble fiber — dissolves completely clear
             </li>
             <li class="flex items-start gap-3 text-sm text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-sage mt-1.5 shrink-0"></span>
-              Zero sugar, under 10 calories per stick
+              Zero sugar, under 10 calories, sweetened with allulose + monk fruit
             </li>
             <li class="flex items-start gap-3 text-sm text-charcoal-light">
               <span class="inline-block w-1.5 h-1.5 rounded-full bg-sage mt-1.5 shrink-0"></span>
-              Convenient stick packs — toss one in your bag
+              Available as a tub or grab-and-go stick packs
             </li>
           </ul>
         </div>
@@ -386,9 +452,9 @@
           But the body doesn't thrive on shortcuts. It thrives on balance.
         </p>
         <p>
-          We don't obsess over a single nutrient. We look at the whole
-          picture — protein, fiber, and the supporting ingredients that
-          help your body actually use what you consume.
+          We don't chase the trend of the moment. We start with fiber — the
+          foundation — then build with the real foods, minerals, and nutrients
+          that help your body actually use what you eat and drink.
         </p>
       </div>
 
