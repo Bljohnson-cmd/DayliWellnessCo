@@ -1,0 +1,8 @@
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# Claude auto memory for this scope (local only, never exported)
+context/.memory-local/
+.claude/worktrees/
